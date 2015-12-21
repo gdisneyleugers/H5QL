@@ -1,0 +1,25 @@
+#H5QL
+DELETE DB db0 ; SYNC ; 
+DELETE KEY db0 ; SYNC ;
+DELETE KEYSTORE db0 ; SYNC ; 
+CREATE DB db0 ; SYNC ;
+CREATE KEY db0 ; SYNC ;
+CREATE KEY dba ; SYNC ;  
+CREATE KEYSTORE STORE db0 KEY db0 ; 
+CREATE GROUP DB db0 ID login TBL login ; SYNC ; 
+SET DB db0 ID login DATA admin KEY dba ; SYNC ;
+CREATE GROUP DB db0 ID password TBL password  ;  SYNC ; 
+SET DB db0 ID password DATA password KEY dba ; SYNC ; 
+CREATE GROUP DB db0 ID servers TBL servers ; SYNC ;
+CREATE GROUP DB db0 ID server TBL server ; SYNC ;  
+SET DB db0 ID servers DATA localhost KEY db0 ; SYNC ;  
+SET DB db0 ID server DATA 127.0.0.1 KEY db0 ; SYNC ;
+DISPLAY DB db0 ; SYNC ; 
+GET DB db0 ID login KEY dba ;
+GET DB db0 ID password KEY dba ;
+GET DB db0 ID servers KEY db0 ;
+GET DB db0 ID server KEY db0 ;
+LIST DB ; 
+LIST KEY ; 
+LIST KEYSTORE ; 
+#EOF
