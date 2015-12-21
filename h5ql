@@ -8,6 +8,6 @@ do
 done < $1
 echo "===================================="
 echo "H5QL Scripting Interface"
-cat info.hql|python h5ql.py| sed -e 's/>//'
+cat info.h5ql|python h5ql.py| sed -e 's/>//'
 echo "===================================="
 exit
